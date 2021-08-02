@@ -1,0 +1,73 @@
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+  <title>UPDATE DETAILS</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+  <body style="align-content: center;">
+    <br>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<style>
+
+body{
+  background-image:url("https://fiverr-res.cloudinary.com/images/q_auto,f_auto/gigs/129325364/original/afaddcb9d7dfaaf5bff7ef04101935814665ac16/design-an-attractive-background-for-your-website.png");
+}
+</style>
+
+<form action="/updated/" method="post">
+{% for i in voters %}
+{% csrf_token %}
+<center>
+
+<div class="content" style="background-color:lightgrey;width:700px;height:700px;border-radius:10px;"><br><br>
+<center><h4 style="color: black;"> <b>Update Voter Details</b>   &nbsp; <i class="bi bi-person-bounding-box"></i></h4></center><br>
+
+
+<input type="hidden"style="width:300px;" class="form-control"  name="id"  value="{{i.id}}" required/>
+<br>
+
+
+<label for="name" style="margin-left:-250px;">&nbsp;&nbsp;<b>Name</b></label>
+    <input type="text"style="width:300px;" class="form-control" id="name" name="name"  value="{{ i.name }}" required/>
+ <br>
+
+
+<label for="name" style="margin-left:-250px;">&nbsp;&nbsp;<b>Gender</b></label>
+      <input type="text"style="width:300px;" class="form-control" id="gender" name="gender"  value="{{ i.gender }}" required/>
+ <br>
+ 
+
+
+<label for="age" style="margin-left:-270px;">&nbsp;&nbsp;<b>Age</b></label>
+    <input type="text"style="width:300px;" class="form-control" id="age" name="age"  value="{{i.age}}"required/>
+ <br>
+
+
+<label for="place" style="margin-left:-260px;">&nbsp;&nbsp;<b>Place</b></label>
+    <input type="text"style="width:300px;" class="form-control" id="place" name="place" value="{{i.place}}" required/>
+ <br>
+
+
+<label for="name" style="margin-left:-250px;">&nbsp;&nbsp;<b>Status</b></label>
+<input type="text" name="status"style="width:300px;" class="form-control" id="status" value="{{i.status}}"><br>
+
+
+<center><button type="submit" class="btn btn-primary"><B>SUBMIT</B></button></center>
+{% endfor%}
+</form>
+
+</div>
+</center></form>
+
+
+
+</body>
+</html>
